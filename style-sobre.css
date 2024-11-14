@@ -1,0 +1,116 @@
+/* Estilo padrão para desktops */
+.artigos1 {
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap; /* Adapta o layout em telas menores */
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.artigos1 img {
+    width: 100%;
+    max-width: 400px; /* Limita a largura máxima */
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.conteudo1 {
+    flex: 1; /* O conteúdo ocupa o espaço restante */
+    padding: 10px 20px;
+}
+
+h1 {
+    color: #007bb5;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.1rem;
+    color: #093d3a;
+    line-height: 1.6;
+}
+
+.artigos1:hover {
+    background: linear-gradient(135deg, #80deea, #4dd0e1);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+/* Responsividade */
+
+/* Para tablets em modo paisagem (até 1024px) */
+@media (max-width: 1024px) {
+    .artigos1 {
+        flex-direction: row;
+        padding: 15px;
+    }
+
+    .artigos1 img {
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Para tablets em modo retrato (até 768px) */
+@media (max-width: 768px) {
+    .artigos1 {
+        flex-direction: column; /* Empilha verticalmente em telas menores */
+        align-items: center; /* Centraliza o conteúdo */
+        text-align: center; /* Texto alinhado no centro */
+        padding: 15px;
+    }
+
+    .artigos1 img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .conteudo1 {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Para smartphones (até 480px) */
+@media (max-width: 480px) {
+    .artigos1 {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .artigos1 img {
+        max-width: 100%; /* Ajusta a imagem ao tamanho do container */
+    }
+}

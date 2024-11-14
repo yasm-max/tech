@@ -1,0 +1,794 @@
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /*Estilização global*/
+
+    .flex{
+        display: flex;
+
+    }
+    a{
+        text-decoration: none;
+    }
+
+    /* end Estilização Global */
+
+    main {
+        margin: 0 auto;
+        max-width: 1920px;
+        padding-top: calc(5vw + 50px);
+    }
+
+    /* Header */
+
+    header {
+        display: flex;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        min-height: 50px;
+        height: 5vw;
+        background-color: white;
+        z-index: 1000; 
+    }
+
+    header .menu-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1920px;
+        width: 100%;
+        padding: 0 40px;
+        margin: 0 auto;
+        border-bottom: 0.1vw solid black;
+    }
+
+
+    header .menu-desktop ul{
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    header .menu-desktop ul li {
+        margin: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        position: relative;
+        padding-bottom: 5px;
+    }
+
+    header .menu-desktop li a{
+        color: black;
+    }
+
+    /* Barra que cresce ao passar o mouse */
+    header .menu-desktop ul li::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background-color: #559dcf; 
+        transition: width 0.3s ease; 
+    }
+
+    /* Efeito de hover */
+    header .menu-desktop ul li:hover::after {
+        width: 100%;
+    }
+
+    header .menu-desktop ul li.special-button-menu {
+        background: linear-gradient(45deg, #559dcf, #46b3e6);
+        color: white; 
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .menu-desktop ul li.special-button-menu:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header .menu-desktop ul li.special-button-menu::after {
+        display: none;
+    }
+
+
+    .menu-moba{
+        display: block;
+    }
+
+    .menu-mobac ul li{
+        background-color: rebeccapurple;
+    }
+
+    .menu-moba{
+        display: none;
+    }
+    /*Fim do Header*/   
+
+    /*banner*/
+    .banner{
+        position: relative;
+        display: flex;
+        padding: 0 40px;
+        justify-content: space-between;
+    }
+
+    .banner article{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .banner h1{
+        font-size: 5rem;
+        margin-bottom: 3vh;
+        color: #093d3a;
+    }
+
+    .banner h1 span{
+        color: #6cace3;
+    }
+    .banner p{
+        font-size: 1.2rem;
+        color: #093d3a;
+        width: 40vw;
+    }
+
+    .banner button 
+    {
+        width: 100%;
+        max-width: 300px;
+        margin: 2vh 0;
+        bottom: 20px;
+        background-color: #6cace3;
+        font-size: 1.3em;
+        padding: 20px 0px;
+        border: none;
+        border-radius: 20px 50px 20px 50px;
+        color: white;
+        cursor: pointer;
+        transition:  0.3s ease,  0.3s ease, 0.2s ease;
+    }
+
+    .banner button:hover {
+        background-color: #559dcf;
+        border-radius: 20px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
+    }
+
+    .banner button:active {
+        transform: scale(0.98);
+    }
+
+
+
+    .banner .banner-img{
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .banner img{
+        width: 100%;
+        height: 100%;
+    }
+
+    /*Sobre nós*/
+    .Sobre-nos{
+        display: flex;
+        flex-direction: column;
+        text-align: center; 
+        position: relative;
+        background: linear-gradient(135deg, #80deea,  #559dcf);
+        color: white;
+        padding: 40px 40px;
+        width: 100%; /* Ocupar toda a largura da tela */
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .quem-somos{
+        display: flex;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+    }
+
+    .artigos{
+        display: flex;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+    }
+
+    .artigos .conteudo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:  2px 100px;
+        height: 100%;
+    }
+    .artigos p{
+        text-align: left;
+        font-size: 1.2em;
+        margin: auto 0;
+    }
+    .artigos p span{
+        font-size: 1.5em;
+    }
+    .artigos h1{
+        text-align: end;
+        font-size: 3em;
+    }
+
+    .artigos img{
+        height: 50vh;
+        animation: float 10s ease-in infinite;
+    }
+
+
+    .nosso-objetivo{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .nosso-objetivo h1{
+        text-align: left;
+    }
+    /*designer background*/
+
+    .amoeba { /*Classe geral das amoebas*/
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.5;
+        z-index: 1;
+    }
+    
+
+
+    .amoeba1 {
+        background: radial-gradient(circle, #ff9a9e, #fad0c4);
+        width: 300px;
+        height: 300px;
+        top: -30px;
+        left: -100px;
+        animation: float 6s ease-in-out infinite;
+    }
+        /* Estilo para a classe 'amoeba1':
+        Aplica a animação 'float' com duração de 6 segundos, usando 'ease-in-out' para suavizar o início e o fim da animação.
+        O valor 'infinite' mantém a animação em loop contínuo.
+        */
+    
+    .amoeba2 {
+        background: radial-gradient(circle, #fbc2eb, #a6c1ee);
+        width: 400px;
+        height: 400px;
+        bottom: -50px;
+        right: -120px;
+        animation: float 8s ease-in-out infinite;
+    }
+
+        /* Estilo para a classe 'amoeba2':
+        Aplica a animação 'float' com duração de 8 segundos, usando 
+        'ease-in-out' para suavizar o início e o fim da animação, 
+        e 'infinite' para mantê-la em loop contínuo.
+        */
+    
+    .amoeba3 {
+        background: radial-gradient(circle, #fdfbfb, #ebedee);
+        width: 200px;
+        height: 200px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: float 10s ease-in-out infinite;
+    }
+
+        /* Estilo para a classe 'amoeba3':
+    
+        Aplica a animação 'float' com duração de 10 segundos, também usando 'ease-in-out' e 'infinite' para o loop contínuo.
+        */
+    
+    /* Curvas Linhas */
+    .curva { /*Class geral das curvas*/
+        position: absolute;
+        width: 100px;
+        height: 400px;
+        background: linear-gradient(to bottom, transparent 0%, white 100%);
+        border-radius: 50px;
+        opacity: 0.2;
+        z-index: 1;
+    }
+    
+    .curva1 {
+        top: 10px;
+        left: 20%;
+        transform: rotate(30deg);
+        animation: float 12s ease-in-out infinite;
+    }
+    
+    .curva2 {
+        bottom: 50px;
+        right: 15%;
+        transform: rotate(-45deg);
+        animation: float 9s ease-in-out infinite;
+    }
+
+    /* Nas classes 'Curva1' e 'Curva2', estamos aplicando a animação 'float'.
+
+    Definimos uma duração de 12s para 'Curva1' e 9s para 'Curva2'.
+
+    Com 'ease-in-out', a animação acelera no início, desacelera no meio e termina suavemente.
+
+    O valor 'infinite' garante que a animação seja executada em loop contínuo.
+    */
+
+
+    /* particulas */
+    .particle { /*Class geral das curvas*/
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        z-index: 1;
+        animation: move 5s linear infinite;
+    }
+    /* Na propriedade 'animation', estamos chamando a animação 'move' e definindo uma duração de 5s.
+
+    Com o valor 'linear', garantimos que a animação ocorra de forma suave do início ao fim.
+
+    Já com 'infinite', indicamos que a animação será executada em loop contínuo.
+    */
+
+    
+    .particle1 {
+        top: 15%;
+        left: 5%;
+        animation-duration: 6s; /*Tempo de duração da animação*/
+    }
+    
+    .particle2 {
+        bottom: 20%;
+        right: 10%;
+        animation-duration: 7s; /*Tempo de duração da animação*/
+    }
+
+    .parcerias {
+        padding: 50px;
+        text-align: center;
+    }
+    
+    .pacerias-container {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .paceria-item {
+        position: relative;
+        width: 300px;
+        border: 1px solid #ddd;
+        margin: 20px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .paceria-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+    
+    .paceria-item .conteudo-pacerias {
+        padding: 20px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .paceria-item h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .paceria-item p {
+        font-size: 1rem;
+        color: #555;
+    }
+    
+    /* Efeito de hover */
+    .paceria-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .paceria-item:hover img {
+        opacity: 0.7;
+    }
+    
+    .paceria-item:hover .conteudo-pacerias {
+        transform: translateY(0);
+    }
+
+    /*footer*/
+    footer{
+        background: linear-gradient(135deg, #80deea,  #559dcf);
+        padding: 50px 0;
+    }
+    .container-footer{
+        max-width: 1400px;
+        padding: 0 40px;
+        margin: auto;
+    }
+    .row-footer{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .footer-col{
+        width: 25%;
+        padding: 0 15px;
+    }
+    .footer-col h4{
+        font-size: 22px;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 500;
+        position: relative;
+        text-transform: uppercase;
+    }
+    .footer-col ul{
+        list-style: none;
+    }
+    .footer-col ul li{
+        margin: 10px 0;
+    }
+    .footer-col ul li a{
+        font-size: 16px;
+        text-transform: capitalize;
+        color: white;
+        text-decoration: none;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .footer-col ul li a:hover{
+        color: #cecdcd;
+        padding-left: 10px;
+    }
+    .footer-col .medias-socias{
+        margin-top: 30px;
+    }
+    .footer-col .medias-socias a{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        border-radius: 50%;
+        color: white;
+        border: 1px solid white;
+        transition: all 0.5s ease;
+    }
+    .footer-col .medias-socias a i{
+        font-size: 20px;
+    }
+    
+    .footer-col .medias-socias a:hover{
+        color: #415aca;
+        background-color: white;
+    }
+    .footer-col .form-sub input{
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        outline: none;
+        border: 1px solid white;
+        color: white;
+        background: linear-gradient(135deg,  #559dcf, #5b92b8);
+    }
+    .footer-col .form-sub input::placeholder{
+        color: white;
+    }
+    .footer-col .form-sub button{
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px; 
+        font-size: 17px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: #093d3a;
+        border-radius: 3px;
+        font-weight: bold;
+        background: linear-gradient(135deg,  #9ed3f9, #5b92b8);       
+    }
+    /* Responsivo */
+    @media (max-width: 800px) {
+        .footer-col{
+            width: 50%;
+            margin-bottom: 30px;
+        }
+    }
+    @media (max-width:600px) {
+        .footer-col{
+            width: 100%;
+        }
+    }
+    /*end*/
+    
+
+    /* Animations */
+    @keyframes float { /*Movimenro de flutuação*/
+        0%, 100% {
+        transform: translateY(0) translateX(0);
+        }
+        50% {
+        transform: translateY(-15px) translateX(15px);
+        }
+    }
+
+        /*Explicação do keyFreme float
+    
+        Serve para criar uma animação de flutuação para os elementos. 
+
+        De 0% a 100%, definimos um deslocamento de 0px. No entanto, quando a animação atinge 50%, 
+        os elementos que possuem essa animação se deslocam 15px para cima e 15px para baixo.
+        */
+    
+    @keyframes move { /*Serve para movimento das particulas*/
+        0% {
+        transform: translate(0, 0);
+        }
+        50% {
+        transform: translate(10px, -10px);
+        }
+        100% {
+        transform: translate(0, 0);
+        }
+    }
+
+    /*Explicação do keyFreme move
+
+    Simula um movimento leve e aleatório, como se fossem partículas flutuando no ar.
+
+    */
+
+    /*end designer background*/
+
+
+
+
+    /*end Sobre Nos*/
+
+
+    /*end banner*/
+
+    @media (max-width: 1024px) {
+
+
+
+        .banner button 
+        {
+            width: 100%;
+            max-width: 150px;
+            margin: 2vh 0;
+            bottom: 20px;
+            background-color: #6cace3;
+            font-size: .9em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px 50px 20px 50px;
+            color: white;
+            cursor: pointer;
+            transition:  0.3s ease,  0.3s ease, 0.2s ease;
+        }
+
+        .Sobre-nos{
+            display: flex;
+            text-align: center; 
+            position: relative;
+            background: #46b3e6; /* Fundo personalizado */
+            color: white;
+            padding: 40px 40px;
+            width: 100%; /* Ocupar toda a largura da tela */
+            height: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+    
+        .artigos{
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+    
+        .artigos .conteudo{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding:  2px 100px;
+            height: 100%;
+        }
+        .artigos p{
+            text-align: center;
+            font-size: 1.2em;
+            margin: auto 0;
+        }
+        .artigos p span{
+            font-size: 1.5em;
+        }
+        .artigos h1{
+            text-align: center;
+            font-size: 3em;
+            margin: 0 0 30px 0;
+        }
+    
+        .artigos img{
+            margin-top: 20px;
+            height: 30vh;
+            margin: 10px;
+        }
+
+        .quem-somos{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .nosso-objetivo{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .nossas-atividades{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    } 
+    
+    @media (max-width: 768px) {
+        header .menu-desktop{ /*inicio de hader reposive*/
+            display: none;
+        }
+        .bi-x-lg{
+            display: none;
+            font-size: 2rem;
+            right: 10px;
+            position: absolute;
+            z-index: 5;
+            color: #ffffff;
+        }
+        header .menu-moba{
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1920px;
+            width: 100%;
+            margin: 0 auto;
+            border-bottom: 1px solid black;
+            position: relative;
+
+        }
+        .menu{
+            font-size: 2rem;
+            right: 10px;
+            position: absolute;
+            color: #3498db;
+        }
+        
+
+        header .menu-moba ul{
+            position: absolute;
+            background-color: red;
+            top: -10px;
+            right: 0;
+            display: none;
+            flex-direction: column;
+            list-style: none;
+            background-color:rgba(52, 152, 219 , .7);
+            width: 50vw;
+            height: 110vh;
+            text-align: right;
+            padding: 50px 10px;
+        }
+        
+        
+        header .menu-moba ul li {
+            margin: 10px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        .menu-moba li a{
+            color: white;
+        }
+        header .menu-moba ul li::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #00548c; /* Cor da animação */
+            transition:  0.6s ease;
+        }
+        
+        header .menu-moba ul li:hover {
+            color: #01385d; /* Mudança de cor no hover */
+        }
+        header .menu-moba ul li a:hover {
+            color: #01385d; /* Mudança de cor no hover */
+        }
+        
+        header .menu-moba ul li:hover::after {
+            width: 100%; /* Sublinhado se expande no hover */
+        }
+        
+
+        /*banner*/
+        .banner h1{
+            font-size: 2em;
+        }
+        .banner p{
+            width: 50vw;
+            font-size: .6em;
+        }
+
+        .banner img{
+            width: 35vw;
+            height: 200px;
+        }
+
+
+        /*end banner*/
+        
+        /*Sobre nós responsivel*/
+        .artigos .conteudo{
+            padding: 0;
+        }
+        /*end Sobre nós responsivel*/
+        .footer .container {
+            padding: 0 20px;
+        }
+    
+        .footer .row {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .footer .col-md-4 {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    
+        .footer-title {
+            text-align: center;
+        }
+    }
+
+    
